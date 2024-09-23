@@ -3,8 +3,8 @@ from datetime import timedelta
 from django.utils import timezone
 
 from allauth.socialaccount.internal.jwtkit import verify_and_decode
-from allauth.socialaccount.providers.apple.client import jwt_encode
-from allauth.socialaccount.providers.oauth2.client import OAuth2Error
+from allauth.socialaccount.providers.apple_provider.client import jwt_encode
+from allauth.socialaccount.providers.oauth2_provider.client import OAuth2Error
 
 
 def test_verify_and_decode(enable_cache):

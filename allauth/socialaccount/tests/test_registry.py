@@ -6,14 +6,14 @@ from allauth.tests import TestCase
 
 
 class CustomFacebookAppConfig(AppConfig):
-    name = "allauth.socialaccount.providers.facebook"
+    name = "allauth.socialaccount.providers.facebook_provider"
     label = "allauth_facebook"
 
 
 class ProviderRegistryTests(TestCase):
     @override_settings(
         INSTALLED_APPS=[
-            "allauth.socialaccount.providers.facebook",
+            "allauth.socialaccount.providers.facebook_provider",
         ]
     )
     def test_load_provider_with_default_app_config(self):
@@ -32,7 +32,7 @@ class ProviderRegistryTests(TestCase):
         app_config_list = list(apps.get_app_configs())
         self.assertEqual(1, len(app_config_list))
         app_config = app_config_list[0]
-        self.assertEqual("allauth.socialaccount.providers.facebook", app_config.name)
+        self.assertEqual("allauth.socialaccount.providers.facebook_provider", app_config.name)
         self.assertEqual("facebook", app_config.label)
 
     @override_settings(
@@ -56,5 +56,5 @@ class ProviderRegistryTests(TestCase):
         app_config_list = list(apps.get_app_configs())
         self.assertEqual(1, len(app_config_list))
         app_config = app_config_list[0]
-        self.assertEqual("allauth.socialaccount.providers.facebook", app_config.name)
+        self.assertEqual("allauth.socialaccount.providers.facebook_provider", app_config.name)
         self.assertEqual("allauth_facebook", app_config.label)

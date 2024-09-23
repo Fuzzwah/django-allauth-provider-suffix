@@ -15,7 +15,7 @@ from allauth.account.models import EmailAddress
 from allauth.account.utils import user_email, user_pk_to_url_str, user_username
 from allauth.core import context
 from allauth.socialaccount.internal import statekit
-from allauth.socialaccount.providers.base.constants import AuthProcess
+from allauth.socialaccount.providers.base_provider.constants import AuthProcess
 
 
 def pytest_collection_modifyitems(config, items):
